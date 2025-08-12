@@ -75,4 +75,28 @@ ORDER BY year, month;
 ```
 
 ## Business Question 6:
-Top 20 Guests bookings
+Who are the top 20 Guests based on bookings?
+```sql
+SELECT
+	CONCAT(gu.first_name, ' ', gu.last_name) AS full_name,
+	SUM(b.total_price) AS revenue_by_guest
+FROM bookings b
+JOIN guests gu ON b.guest_id = gu.guest_id
+WHERE booking_status = 'Completed'
+GROUP BY full_name
+ORDER BY revenue_by_guest DESC
+LIMIT 20;
+```
+
+## Business Question 7:
+What is the Total Revenue per momth?
+```sql
+SELECT
+	TO_CHAR(b.check_in, 'YYYY-MM') AS year_month,
+	SUM(b.total_price) AS monthly_revenue
+FROM bookings b
+JOIN properties pr ON b.property_id = pr.property_id
+WHERE b.booking_status = 'Completed'
+GROUP BY year_month
+ORDER BY year_month;
+```
