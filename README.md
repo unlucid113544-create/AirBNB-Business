@@ -24,8 +24,7 @@ GROUP BY pro.property_name
 ORDER BY total_revenues;
 ```
 
-## Business Question 2:
-Whats the Average revenue per booking for each property type?
+## Business Question 2: Whats the Average revenue per booking for each property type?
 
 ```sql
 SELECT pro.property_name, 
@@ -37,8 +36,7 @@ GROUP BY pro.property_name
 ORDER BY total_revenues;
 ```
 
-## Business Question 3:
-Which location generated the highest earnings? 
+## Business Question 3: Which location generated the highest earnings? 
 ```sql
 SELECT pro.location, 
 	SUM(b.total_price) AS total_revenues
@@ -49,8 +47,7 @@ GROUP BY pro.location
 ORDER BY total_revenues DESC;
 ```
 
-## Business Question 4:
-Which nationality books the most nights overall?
+## Business Question 4: Which nationality books the most nights overall?
 ```sql
 SELECT 
 	gu.nationality,
@@ -62,8 +59,7 @@ GROUP BY gu.nationality
 ORDER BY total_nights DESC;
 ```
 
-## Business Question 5:
-How many bookings per month?
+## Business Question 5: How many bookings per month?
 ```sql
 SELECT 
 	EXTRACT(YEAR FROM check_in) as YEAR,
@@ -74,8 +70,7 @@ GROUP BY year, month
 ORDER BY year, month;
 ```
 
-## Business Question 6:
-Who are the top 20 Guests based on bookings?
+## Business Question 6: Who are the top 20 Guests based on bookings?
 ```sql
 SELECT
 	CONCAT(gu.first_name, ' ', gu.last_name) AS full_name,
@@ -88,8 +83,7 @@ ORDER BY revenue_by_guest DESC
 LIMIT 20;
 ```
 
-## Business Question 7:
-What is the Total Revenue per momth?
+## Business Question 7: What is the Total Revenue per momth?
 ```sql
 SELECT
 	TO_CHAR(b.check_in, 'YYYY-MM') AS year_month,
