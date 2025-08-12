@@ -11,3 +11,12 @@ This project aims to create an easy to understand dashboard  to review the track
 
 <img width="4150" height="2400" alt="Dashboard" src="https://github.com/user-attachments/assets/84320732-8969-4c29-8d72-26810f5c3b40" />
 
+
+```sql
+SELECT PRO.PROPERTY_NAME,
+	SUM (B.TOTAL_PRICE) AS TOTAL_REVENUES
+FROM BOOKINGS B
+JOIN PROPERTIES PRO ON B.PROPERTY_ID = PRO.PROPERTY_ID
+WHERE B.BOOKING_STATUS = 'Completed'
+GROUP BY PRO.PROPERTY_NAME
+ORDER BY TOTAL_REVENUES;
