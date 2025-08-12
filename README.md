@@ -8,3 +8,5 @@ This project aims to create an easy to understand dashboard  to review the track
 
 ## Dashboard
 - <a href="https://github.com/unlucid113544-create/AirBNB-Business/blob/main/Portfolio%201.0%20AIRBNB.pbix">AirBNB Dashboard</a>
+
+![DASHBOARD](https://github.com/user-attachments/assets/88ccb984-70c6-416e-8651-c42933c0517a)
