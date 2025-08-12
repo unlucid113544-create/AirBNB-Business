@@ -36,3 +36,43 @@ WHERE b.booking_status = 'Completed'
 GROUP BY pro.property_name
 ORDER BY total_revenues;
 ```
+
+## Business Question 3:
+Which location generated the highest earnings? 
+```sql
+SELECT pro.location, 
+	SUM(b.total_price) AS total_revenues
+FROM bookings b
+JOIN properties pro ON b.property_id = pro.property_id
+WHERE b.booking_status = 'Completed'
+GROUP BY pro.location
+ORDER BY total_revenues DESC;
+```
+
+## Business Question 4:
+Which nationality books the most nights overall?
+```sql
+SELECT 
+	gu.nationality,
+	SUM(b.check_out - b.check_in) AS total_nights
+FROM bookings b
+JOIN guests gu ON b.guest_id = gu.guest_id
+WHERE booking_status = 'Completed'
+GROUP BY gu.nationality
+ORDER BY total_nights DESC;
+```
+
+## Business Question 5:
+How many bookings per month?
+```sql
+SELECT 
+	EXTRACT(YEAR FROM check_in) as YEAR,
+	EXTRACT(MONTH FROM check_in) as MONTH,
+	COUNT (*) AS total_bookings
+FROM bookings
+GROUP BY year, month
+ORDER BY year, month;
+```
+
+## Business Question 6:
+Top 20 Guests bookings
