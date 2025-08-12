@@ -83,7 +83,7 @@ ORDER BY revenue_by_guest DESC
 LIMIT 20;
 ```
 
-## Business Question 7: What is the Total Revenue per momth?
+## Business Question 7: What is the Total Revenue per month?
 ```sql
 SELECT
 	TO_CHAR(b.check_in, 'YYYY-MM') AS year_month,
