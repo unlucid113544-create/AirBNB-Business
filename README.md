@@ -22,3 +22,17 @@ JOIN properties pro ON b.property_id = pro.property_id
 WHERE b.booking_status = 'Completed'
 GROUP BY pro.property_name
 ORDER BY total_revenues;
+```
+
+## Business Question 2:
+Whats the Average revenue per booking for each property type?
+
+```sql
+SELECT pro.property_name, 
+	ROUND(AVG(b.total_price),2) AS total_revenues
+FROM bookings b
+JOIN properties pro ON b.property_id = pro.property_id
+WHERE b.booking_status = 'Completed'
+GROUP BY pro.property_name
+ORDER BY total_revenues;
+```
