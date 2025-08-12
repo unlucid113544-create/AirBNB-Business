@@ -11,12 +11,14 @@ This project aims to create an easy to understand dashboard  to review the track
 
 <img width="4150" height="2400" alt="Dashboard" src="https://github.com/user-attachments/assets/84320732-8969-4c29-8d72-26810f5c3b40" />
 
+## Business Question 1:
+Which property generated the highest revenue of the year 2024?
 
 ```sql
-SELECT PRO.PROPERTY_NAME,
-	SUM (B.TOTAL_PRICE) AS TOTAL_REVENUES
-FROM BOOKINGS B
-JOIN PROPERTIES PRO ON B.PROPERTY_ID = PRO.PROPERTY_ID
-WHERE B.BOOKING_STATUS = 'Completed'
-GROUP BY PRO.PROPERTY_NAME
-ORDER BY TOTAL_REVENUES;
+SELECT pro.property_name, 
+	SUM (b.total_price) AS total_revenues
+FROM bookings b
+JOIN properties pro ON b.property_id = pro.property_id
+WHERE b.booking_status = 'Completed'
+GROUP BY pro.property_name
+ORDER BY total_revenues;
