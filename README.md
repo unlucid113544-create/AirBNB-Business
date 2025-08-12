@@ -11,8 +11,7 @@ This project aims to create an easy to understand dashboard  to review the track
 
 <img width="4150" height="2400" alt="Dashboard" src="https://github.com/user-attachments/assets/84320732-8969-4c29-8d72-26810f5c3b40" />
 
-## Business Question 1:
-Which property generated the highest revenue of the year 2024?
+## Business Question 1: Which property generated the highest revenue of the year 2024?
 
 ```sql
 SELECT pro.property_name, 
